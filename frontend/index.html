@@ -1,33 +1,54 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NAVEEN CLIP AI</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090914">
+<title>NAVEEN CLIP AI — Create more. Edit less.</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header>
-  <h2>✦ NAVEEN CLIP AI</h2>
+<div class="ambient a1"></div><div class="ambient a2"></div>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brandmark">N</span><span>NAVEEN <b>CLIP AI</b><small>CREATOR STUDIO</small></span></a>
+  <span class="status"><i></i> STUDIO ONLINE</span>
 </header>
-
-<main>
-  <h1>Turn long videos into <span>viral clips.</span></h1>
-  <p>Let AI find the best moments automatically.</p>
-
-  <section>
-    <h3>Upload your video</h3>
-    <input id="videoInput" type="file" accept="video/*">
-    <p>Clip length: 30–60 seconds</p>
-    <p>Format: Vertical 9:16</p>
-    <button id="makeBtn" disabled>Find Best Clips ✨</button>
-    <p id="status"></p>
+<main class="shell">
+  <section class="hero">
+    <div class="eyebrow"><span>✦</span> YOUR ALL-IN-ONE CREATOR WORKSPACE</div>
+    <h1>Make videos that<br><em>make people stop.</em></h1>
+    <p>Turn your footage into short clips, or turn a story idea into a cinematic film plan.</p>
   </section>
-
-  <div id="results"></div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="clip">◧ &nbsp; AI Clip Maker</button>
+    <button class="tab" data-tab="film">✧ &nbsp; 3D Film Studio</button>
+  </nav>
+  <section id="clipPanel" class="panel">
+    <div class="panelhead"><div><div class="eyebrow">01 / REPURPOSE CONTENT</div><h2>Find your next great clip</h2><p>Upload a video you own or have permission to edit.</p></div><div class="orb">▶</div></div>
+    <form id="clipForm">
+      <label class="upload" for="videoInput"><span class="uploadicon">↑</span><strong>Drop your video here</strong><span>or tap to browse your phone</span><small>MP4 · MOV · MKV · WEBM</small><input id="videoInput" type="file" accept="video/*" required></label>
+      <div class="settings">
+        <div class="field"><label for="duration">CLIP DURATION</label><select id="duration"><option value="15">15 seconds</option><option value="30" selected>30 seconds</option><option value="45">45 seconds</option><option value="60">60 seconds</option><option value="90">90 seconds</option></select></div>
+        <div class="field"><label for="count">NUMBER OF CLIPS</label><select id="count"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
+      </div>
+      <div class="hint">Current starter mode samples clips across your video and crops them to vertical 9:16. AI highlight ranking and subtitles are not connected yet.</div>
+      <button class="primary" id="makeBtn" type="submit">✦ &nbsp; Create my clips <span>→</span></button>
+    </form>
+    <div id="clipStatus" class="message" aria-live="polite"></div><div id="results" class="results"></div>
+  </section>
+  <section id="filmPanel" class="panel hidden">
+    <div class="panelhead"><div><div class="eyebrow">02 / CREATE FROM IMAGINATION</div><h2>Build a 3D short film</h2><p>Start with a story. Get a scene-by-scene cinematic storyboard.</p></div><div class="orb star">✧</div></div>
+    <form id="filmForm">
+      <div class="field full"><label for="story">YOUR STORY IDEA</label><textarea id="story" rows="4" placeholder="A brave little robot discovers a hidden city beneath the ocean..." required></textarea></div>
+      <div class="settings">
+        <div class="field"><label for="filmDuration">FILM LENGTH</label><select id="filmDuration"><option value="30">30 seconds</option><option value="45">45 seconds</option><option value="60" selected>60 seconds</option></select></div>
+        <div class="field"><label for="filmStyle">VISUAL STYLE</label><select id="filmStyle"><option>3D animation</option><option>Stylized 3D cartoon</option><option>Cinematic fantasy 3D</option><option>Realistic 3D animation</option></select></div>
+      </div>
+      <button class="primary" type="submit">✧ &nbsp; Create film storyboard <span>→</span></button>
+    </form>
+    <div id="filmStatus" class="message" aria-live="polite"></div><div id="storyboard" class="storyboard"></div>
+    <div class="hint">Note: this version creates the script and storyboard, not rendered 3D footage. Actual video generation requires connecting a compatible AI video service.</div>
+  </section>
+  <footer><span>✦ NAVEEN CLIP AI</span><span>Built for creators · Starter edition</span></footer>
 </main>
-
 <script src="/app.js"></script>
-</body>
-</html>
+</body></html>
