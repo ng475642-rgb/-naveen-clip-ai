@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/outputs:/app/backend/outputs
+    environment:
+      - WHISPER_MODEL=base
